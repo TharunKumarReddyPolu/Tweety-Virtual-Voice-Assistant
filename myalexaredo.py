@@ -20,7 +20,6 @@ engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 engine.setProperty('voice','voices[0].id')
 
-
 def speak(text):
     engine.say(text)
     engine.runAndWait()
@@ -55,7 +54,6 @@ def takeCommand():
 
 if __name__=='__main__':
 
-
     while True:
         speak("Tell me how can I help you now?")
         statement = takeCommand().lower()
@@ -66,7 +64,6 @@ if __name__=='__main__':
             speak('your personal assistant G-one is shutting down,Good bye')
             print('your personal assistant G-one is shutting down,Good bye')
             break
-
 
 
         if 'wikipedia' in statement:
@@ -93,7 +90,7 @@ if __name__=='__main__':
             time.sleep(5)
 
         elif "weather" in statement:
-            api_key="8ef61edcf1c576d65d836254e11ea420"
+            api_key="Your Own API key"
             base_url="https://api.openweathermap.org/data/2.5/weather?"
             speak("whats the city name")
             city_name=takeCommand()
@@ -135,8 +132,8 @@ if __name__=='__main__':
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was built by Mirthula")
-            print("I was built by Mirthula")
+            speak("I was built by Polu Tharun Kumar Reddy")
+            print("I was built by Polu Tharun Kumar Reddy")
 
         elif "open stackoverflow" in statement:
             webbrowser.open_new_tab("https://stackoverflow.com/login")
@@ -167,7 +164,7 @@ if __name__=='__main__':
 
 
         elif "log off" in statement or "sign out" in statement:
-            speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
+            speak("Ok , your pc will log off in 10 sec make sure you exit from all currently working or running applications")
             subprocess.call(["shutdown", "/l"])
 
 time.sleep(3)
