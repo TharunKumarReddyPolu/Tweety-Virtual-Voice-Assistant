@@ -48,6 +48,7 @@ def takeCommand():
 
         except Exception as e:
             speak("Pardon me, can you please say that again")
+            print("Pardon me, can you please say that again")
             return "None"
         return statement
 
@@ -56,13 +57,14 @@ if __name__=='__main__':
 
     while True:
         speak("Tell me how can I help you now?")
+        print("Tell me how can I help you now?")
         statement = takeCommand().lower()
         if statement==0:
             continue
 
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your personal assistant G-one is shutting down,Good bye')
-            print('your personal assistant G-one is shutting down,Good bye')
+            speak('your personal assistant Tweety is shutting down,Good bye')
+            print('your personal assistant Tweety is shutting down,Good bye')
             break
 
 
@@ -126,7 +128,7 @@ if __name__=='__main__':
             speak(f"the time is {strTime}")
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am G-one version 1 point O your persoanl assistant. I am programmed to minor tasks like'
+            speak('I am Tweety version 1 point O your persoanl assistant. I am programmed to minor tasks like'
                   'opening youtube,google chrome,gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather' 
                   'in different cities , get top headline news from times of india and you can ask me computational or geographical questions too!')
 
@@ -155,8 +157,8 @@ if __name__=='__main__':
         elif 'ask' in statement:
             speak('I can answer to computational and geographical questions and what question do you want to ask now')
             question=takeCommand()
-            app_id="R2K75H-7ELALHR35X"
-            client = wolframalpha.Client('R2K75H-7ELALHR35X')
+            app_id="your_id"
+            client = wolframalpha.Client(app_id)
             res = client.query(question)
             answer = next(res.results).text
             speak(answer)
@@ -164,7 +166,7 @@ if __name__=='__main__':
 
 
         elif "log off" in statement or "sign out" in statement:
-            speak("Ok , your pc will log off in 10 sec make sure you exit from all currently working or running applications")
+            speak("Okay , your pc will log off in 10 sec make sure you exit from all currently working or running applications")
             subprocess.call(["shutdown", "/l"])
 
 time.sleep(3)
