@@ -1,12 +1,12 @@
 # Hello Open Source Contributor/ Viewer 👋
-# Welcome to Tweety - Virtual Voice Assistant's World🐥
+# Welcome to Tweety - The Virtual Voice Assistant's World🐥
 
 📌 Tech Stack used: Python 3.x, Libraries & Modules, Third Party APIs, GIT, VS Code<br>
 ✏️ Tweety is a virtual voice assistant built on top of Windows OS with python 3.x as the programming language.<br>
 ✏️ It was built by grabbing the features of various in-built libraries and modules in python<br>
 ✏️ This voice assistant helps in assisting with various routine tasks that a Software Engineer(SWE) performs in his daily life & work life.<br>
 
-## Feel free to Contribute 😁🛠
+## Feel free to Contribute 😁🛠 Be it code or non-code 😉
 ## Steps to follow 📃
 
 ### 1. Fork the project 🔪
