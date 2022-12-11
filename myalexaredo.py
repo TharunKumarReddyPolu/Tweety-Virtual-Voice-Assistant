@@ -67,7 +67,7 @@ def takeCommand():
             tweety_speaks("Pardon me, can you please say that again")
             print("Pardon me, can you please say that again")
             takeCommand()
-        return user_response
+    return user_response
 
 #This function helps Tweety to get the user information
 def user_info():
@@ -184,6 +184,9 @@ if __name__=='__main__':
             #webbrowser based actions
             if 'stack overflow' in command:
                 execute_webbrowser("https://www.stackoverflow.com","website")
+                
+            if 'google' in command:
+                execute_webbrowser("https://www.google.com", "website")
 
             if 'youtube' in command:
                 execute_webbrowser("https://www.youtube.com","website")
