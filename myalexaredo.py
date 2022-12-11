@@ -67,7 +67,7 @@ def takeCommand():
             tweety_speaks("Pardon me, can you please say that again")
             print("Pardon me, can you please say that again")
             takeCommand()
-        return user_response
+    return user_response
 
 #This function helps Tweety to get the user information
 def user_info():
@@ -137,8 +137,7 @@ if __name__=='__main__':
     #loading the assistant, starts with a Wish and gets the user info
     load_tweety()
     wish_me()
-    #user_name = user_info()
-    user_name = "tharun"
+    user_name = user_info()
     tweety_speaks(f"Hope you are doing great Tell me how can I help you now?")
     print(f"{user_name},Hope you are doing great. Tell me how can I help you now?")
 
