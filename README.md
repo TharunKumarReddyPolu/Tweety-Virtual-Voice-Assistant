@@ -1,4 +1,4 @@
-# Hello Open Source Contributor/ Viewer 👋
+# Hello Open Source Enthusiast/ Viewer 👋
 # Welcome to Tweety - The Virtual Voice Assistant's World🐥
 
 📌 Tech Stack used: Python 3.x, Libraries & Modules, Third Party APIs, GIT, VS Code<br>
@@ -85,7 +85,7 @@ Whenever you are going to submit a contribution. Please create separate branch u
 ```
 change type includes `bug fix`, `new feature`, `comments`, `enhancements` etc.
 
-the name includes your `first name` or `last name
+the name includes your `first name` or `last name`
 
 After creating the branch above, run the below command to checkout/switch to the new branch created
 ```bash
