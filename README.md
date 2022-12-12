@@ -79,7 +79,7 @@ Once you are done with the above steps, you are ready to contribute to the `Twee
 
 ### 6. Installing packages required 📦📥
 
-1) `Speech recognition` — Speech recognition is an important feature of voice assistants. The main function of this library is it tries to understand whatever humans speak and converts the speech to text. Install using the below command in the terminal
+1) `Speech Recognition` — Speech recognition is an important feature of voice assistants. The main function of this library is it tries to understand whatever humans speak and converts the speech to text. Install using the below command in the terminal
 ```bash
    pip install SpeechRecognition
 ```
@@ -89,7 +89,7 @@ Once you are done with the above steps, you are ready to contribute to the `Twee
    pip install pyttsx3
 ```
 
-3) `wikipedia` - Wikipedia is a multilingual online encyclopedia used by many people from the academic community ranging from freshmen to students to professors who wants to gain information on a particular topic. This python package extracts data required from Wikipedia. Install using the below command
+3) `Wikipedia` - Wikipedia is a multilingual online encyclopedia used by many people from the academic community ranging from freshmen to students to professors who wants to gain information on a particular topic. This python package extracts data required from Wikipedia. Install using the below command
 ```bash
    pip install wikipedia
 ```
@@ -109,14 +109,19 @@ Once you are done with the above steps, you are ready to contribute to the `Twee
    pip install twilio
 ```
 
-7) `winshell` - It is a light wrapper around the Windows shell functionality. It includes convenience functions for accessing special folders, using the shell’s file copy, rename & delete functionality, and a certain amount of support for structured storage. Install this module using the below command in the terminal.
+7) `Winshell` - It is a light wrapper around the Windows shell functionality. It includes convenience functions for accessing special folders, using the shell’s file copy, rename & delete functionality, and a certain amount of support for structured storage. Install this module using the below command in the terminal.
 ```bash
    pip install winshell
 ```
 
-8) `pyjokes` - This package provides one-line jokes for programmers (i.e, jokes as a service). Install this module using the below command in the terminal.
+8) `PyJokes` - This package provides one-line jokes for programmers (i.e, jokes as a service). Install this module using the below command in the terminal.
 ```bash
    pip install pyjokes
+```
+
+9) `PyAudio` - This is a package with which you can easily use python to play and record audio on a variety of platforms, such as GNU/Linux, Microsoft Windows, and Apple macOS. Install this module using the below command in the terminal.
+```bash
+   pip install PyAudio
 ```
 
 > If any package installation is not specified above, then those packages are built-in with python.
@@ -132,6 +137,8 @@ For instance, If `Speech Recognition` package latest version isn't working in yo
    $ pip install SpeechRecognition==3.8.1
 ```
 where `SpeechRecognition` refers to `package_name` and `3.8.1` refers to `previous version`/`specific version`
+
+> `Tweety Package Manager`📦🛡 (A Util which simplifies the package installations 🤯) development is in progress 🧑‍💻. Will be available soon 🙂💯. Stay Tuned...😉
 
 ### 7. Create a new branch 🌱
 Whenever you are going to submit a contribution. Please create a separate branch using the below command and keep your `master` branch clean (i.e. synced with the remote branch)
@@ -157,8 +164,8 @@ To add your changes to the branch. Run the below command ➕️
 ```bash
   $ git add . 
 ```
-> Above command uses `period (.)` indicating all the files are added
->to stage specific file changes, use the below command instead
+> Above command uses `period (.)` indicating all the files are added (or)
+> to stage specific file changes, use the below command instead
 
 ```bash
   $ git add <file_name>
@@ -181,6 +188,10 @@ Finally, Navigate to your forked `Tweety-Virtual-Voice-Assistant` repository in 
 
 Please discuss your concerns with [Polu Tharun Kumar Reddy](https://www.linkedin.com/in/polu-tharun-kumar-reddy/) before creating a new issue. 😉
 
+_Please `STAR`⭐️ the repository if you like the content and code_**😁
+
+_Also enable the `WATCH`👁 button to keep watching the updates on the repository_**😉
+
 💯💻🧑‍💻👩‍💻 Happy Contributing 👩‍💻🧑‍💻💻💯
 
-![cover](https://user-images.githubusercontent.com/62342666/206778571-a91b178a-ddec-4b55-9cae-97857b8a18be.jpg)
+![tweety_project_cover](https://user-images.githubusercontent.com/62342666/207068013-8b6fb68b-f159-4532-8653-65f2e1be888f.jpg)
