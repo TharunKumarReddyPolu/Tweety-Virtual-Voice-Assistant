@@ -1,26 +1,28 @@
-#import required libraries and utility functions from tweety_functions.py file
+# import required libraries and utility functions from tweety_functions.py file
 from tweety_functions import *
 
-if __name__=='__main__':
-    #the below line of code clears the console
-    #before tweety turns up
+if __name__ == '__main__':
+    # the below line of code clears the console
+    # before tweety turns up
     clear = lambda: os.system('cls')
     clear()
 
-    #loading the assistant, starts with a Wish and gets the user info
+    # loading the assistant, starts with a Wish and gets the user info
     load_tweety()
     wish_me()
     user_name = user_info()
     tweety_speaks(f"Hope you are doing great Tell me how can I help you now?")
     print(f"{user_name},Hope you are doing great. Tell me how can I help you now?")
 
-    #list to ask for further questions
-    repeat_intro = ["Do you have any other questions", "Do i have any further questions if not i can take a short nap just kidding", "How can i help you furthermore please say yes if you have any queries"]
+    # list to ask for further questions
+    repeat_intro = ["Do you have any other questions",
+                    "Do i have any further questions if not i can take a short nap just kidding",
+                    "How can i help you furthermore please say yes if you have any queries"]
 
     # Below variable keeps track of tweety voice assistant usage
     usage_count = 1
     while True:
-        #check if tweety is ready to ans the second question
+        # check if tweety is ready to ans the second question
         if usage_count >= 2:
             ask_next_query = random.choice(repeat_intro)
             tweety_speaks(ask_next_query)
@@ -30,7 +32,7 @@ if __name__=='__main__':
                 usage_count = 1
                 continue
             else:
-                #print("in else") for debugging purpose
+                # print("in else") for debugging purpose
                 break
 
         command = str(takeCommand().lower())
@@ -47,39 +49,39 @@ if __name__=='__main__':
             if 'wikipedia' in command:
                 tweety_speaks('Searching Wikipedia...')
                 command = command.replace("wikipedia", "")
-                if(command != ''):
+                if command != '':
                     results = wikipedia.summary(command, sentences=3)
                     print("According to Wikipedia" + results)
                     tweety_speaks("According to Wikipedia" + results)
                 else:
                     tweety_speaks("please try again")
-            
-            #webbrowser based actions
+
+            # web browser based actions
             if 'stack overflow' in command:
-                execute_webbrowser("https://www.stackoverflow.com","website")
+                execute_webbrowser("https://www.stackoverflow.com", "website")
 
             if 'youtube' in command:
-                execute_webbrowser("https://www.youtube.com","website")
+                execute_webbrowser("https://www.youtube.com", "website")
 
             if 'gmail' in command:
-                execute_webbrowser("https://www.gmail.com","website")
-            
-            if 'search'  in command:
+                execute_webbrowser("https://www.gmail.com", "website")
+
+            if 'search' in command:
                 command = command.replace("search ", "")
-                if(command != ''):
+                if command != '':
                     parsed_command = "https://www.google.com/search?q=" + command
-                    execute_webbrowser(parsed_command,"query")
+                    execute_webbrowser(parsed_command, "query")
                 else:
                     tweety_speaks("Please check there is nothing to search")
                     print("Please check there is nothing to search")
 
             if "where is " in command:
-                location = command.replace("where is ","")
+                location = command.replace("where is ", "")
                 tweety_speaks("Locating " + location)
                 location_search_link = "https://www.google.nl / maps / place/" + location + ""
                 execute_webbrowser(location_search_link, "query")
 
-            #send mail to custom recipient
+            # send mail to custom recipient
             if 'send a mail' in command:
                 try:
                     tweety_speaks("whom should i send the mail?")
@@ -89,7 +91,7 @@ if __name__=='__main__':
                     print("what should i say?")
                     mail_body = takeCommand()
                     mail_sent_status = send_email(to, mail_body)
-                    if(mail_sent_status == True):
+                    if mail_sent_status == True:
                         tweety_speaks("The email has been sent!")
                         print("The email has been sent!")
                 except Exception as e:
@@ -97,45 +99,46 @@ if __name__=='__main__':
                     tweety_speaks("Sorry! I am unable to send the email")
 
             if "send message" in command or "text message" in command:
-                #create an account on Twilio to access the service
+                # create an account on Twilio to access the service
                 acnt_sid = "Your account Sid key"
                 auth_token = "Your auth token"
                 client = Client(acnt_sid, auth_token)
                 message = client.messages.create(
-                                            body = takeCommand(),
-                                            from_  = "Sender Number",
-                                            to = "Recipient Number"
+                    body=takeCommand(),
+                    from_="Sender Number",
+                    to="Recipient Number"
                 )
                 print(message.sid)
                 tweety_speaks("Message sent successfully to the recipient")
 
-            #get latest news updates using news api - Third Party API case
+            # get the latest news updates using news api - Third Party API case
             if 'news' in command:
                 try:
-                    json_object = urlopen('''https://newsapi.org / v1 / articles?source = the-times-of-india&sortBy = top&apiKey =\\times of India Api key\\''')
+                    json_object = urlopen(
+                        '''https://newsapi.org / v1 / articles?source = the-times-of-india&sortBy = top&apiKey =\\times of India Api key\\''')
                     headlines = json.load(json_object)
                     i = 1
-                
+
                     tweety_speaks('here are some top news from the times of india')
-                    print("=============== TIMES OF INDIA ============"+ '\n')
-                    
+                    print("=============== TIMES OF INDIA ============" + '\n')
+
                     for item in headlines['articles']:
                         print(str(i) + '. ' + item['title'] + '\n')
                         print(item['description'] + '\n')
                         tweety_speaks(str(i) + '. ' + item['title'] + '\n')
                         i += 1
-                except Exception as e:   
+                except Exception as e:
                     print(str(e))
-                    tweety_speaks("Oops! An error occured while fetching the news")
+                    tweety_speaks("Oops! An error occurred while fetching the news")
 
-            #get latest weather updates with city name using openweathermap - Third Party API case
+            # get the latest weather updates with city name using openweathermap - Third Party API case
             if "weather" in command:
-                api_key="Your Own API key"
-                base_url="https://api.openweathermap.org/data/2.5/weather?"
+                api_key = "Your Own API key"
+                base_url = "https://api.openweathermap.org/data/2.5/weather?"
                 tweety_speaks("what is the city name")
                 print("what is the city name")
                 city_name = takeCommand()
-                complete_url = base_url+"appid="+api_key+"&q="+city_name
+                complete_url = base_url + "appid=" + api_key + "&q=" + city_name
                 response = request.get(complete_url)
                 x = response.json()
                 if x["code"] != "404":
@@ -145,21 +148,21 @@ if __name__=='__main__':
                     z = x["weather"]
                     weather_description = z[0]["description"]
                     tweety_speaks(" Temperature in kelvin unit is " +
-                        str(current_temperature) +
-                        "\n humidity in percentage is " +
-                        str(current_humidiy) +
-                        "\n description  " +
-                        str(weather_description))
+                                  str(current_temperature) +
+                                  "\n humidity in percentage is " +
+                                  str(current_humidiy) +
+                                  "\n description  " +
+                                  str(weather_description))
                     print(" Temperature in kelvin unit = " +
-                        str(current_temperature) +
-                        "\n humidity (in percentage) = " +
-                        str(current_humidiy) +
-                        "\n description = " +
-                        str(weather_description))
+                          str(current_temperature) +
+                          "\n humidity (in percentage) = " +
+                          str(current_humidiy) +
+                          "\n description = " +
+                          str(weather_description))
                 else:
                     tweety_speaks("Requested City Not Found")
 
-            #taking a note into a file - file handling case
+            # taking a note into a file - file handling case
             if "write a note" in command or "take a note" in command:
                 tweety_speaks("what do i need to jot down")
                 note = takeCommand()
@@ -173,7 +176,7 @@ if __name__=='__main__':
                 else:
                     note_file.write(note)
 
-            #reading the taken note in file - file handling case
+            # reading the taken note in file - file handling case
             if "show note" in command or "read notes" in command:
                 tweety_speaks("Speaking out notes")
                 if os.stat("tweety_notes.txt").st_size == 0:
@@ -184,14 +187,16 @@ if __name__=='__main__':
                         print(contents)
                         tweety_speaks(contents)
 
-            #get answers to computational and geographical queries
+            # get answers to computational and geographical queries
             if "what is" in command or "who is" in command:
                 execute_wolframalpha()
 
             if "ask" in command:
-                tweety_speaks('I can answer most of your questions because i am still learning and now what question do you want to ask now')
+                tweety_speaks(
+                    'I can answer most of your questions because i am still learning and now what question do you '
+                    'want to ask now')
                 execute_wolframalpha()
-            
+
             if 'calculate' in command:
                 api_id = "Wolframalpha api id"
                 client = wolframalpha.Client(api_id)
@@ -202,28 +207,32 @@ if __name__=='__main__':
                 print("The result is " + answer)
                 tweety_speaks("The result is " + answer)
 
-            #most shooted commands/questions 
+            # most shooted commands/questions
             if 'time' in command:
                 str_time = datetime.datetime.now().strftime("%H:%M:%S")
                 tweety_speaks(f"the current time is {str_time}")
                 time.sleep(5)
-            
+
             if 'joke' in command or "tell me a joke" in command:
                 joke = pyjokes.get_joke()
                 tweety_speaks(joke)
                 print(joke)
 
             if 'how are you' in command or 'how are you doing' in command:
-                how_are_you_responses = ["i am doing good thank you", "i am doing great indeed i feel better today", "i am feeling happy as you are with me", "i am good hope you are doing well too"]
+                how_are_you_responses = ["i am doing good thank you", "i am doing great indeed i feel better today",
+                                         "i am feeling happy as you are with me",
+                                         "i am good hope you are doing well too"]
                 s = random.choice(how_are_you_responses)
                 tweety_speaks(s)
                 print(s)
                 time.sleep(5)
 
             if 'who are you' in command or 'what is your name' in command or 'what can you do' in command:
-                tweety_speaks('I am Tweety version 1 point O your personal virtual vocie assistant. I am programmed to perform minor tasks like'
-                    'opening youtube,google chrome,gmail, stackoverflow ,predict time,take a photo,search wikipedia,predict weather' 
-                    'in different cities , get top headline news from times of india and you can also ask me computational or geographical questions too!')
+                tweety_speaks(
+                    'I am Tweety version 1 point O your personal virtual voice assistant. I am programmed to perform '
+                    'minor tasks like opening youtube,google chrome,gmail, stackoverflow ,predict time,take a photo,'
+                    'search wikipedia, predict weather in different cities , get top headline news from times of '
+                    'india and you can also ask me computational or geographical questions too!')
 
             if "who made you" in command or "who created you" in command or "who discovered you" in command or "reason for your invention" in command:
                 tweety_speaks("I have been created by Polu Tharun Kumar Reddy")
@@ -232,12 +241,12 @@ if __name__=='__main__':
             if "i love you" in command or "love" in command:
                 tweety_speaks("It is hard to understand")
 
-            if "will you be my gf" in command or "will you be my bf" in command:  
+            if "will you be my gf" in command or "will you be my bf" in command:
                 tweety_speaks("I'm not sure about, may be you should give me some time")
 
             if "who i am" in command or "who am i" in command:
                 tweety_speaks("If you can talk and think then definitely you are human")
-            
+
             if "why do you exist" in command or "why are you created" in command:
                 tweety_speaks("Thanks to Polu Tharun Kumar Reddy. further details is a top secret")
 
@@ -245,17 +254,17 @@ if __name__=='__main__':
                 tweety_speaks("It is 7th sense that destroy all other senses")
 
             if "camera" in command or "take a photo" in command or "capture " in command:
-                ec.capture(0,"Tharun camera","img.jpg")
-            
+                ec.capture(0, "Tharun camera", "img.jpg")
+
             if "empty recycle bin" in command:
-                winshell.recycle_bin().empty(confirm = False, show_progress = False, Sound = True)
+                winshell.recycle_bin().empty(confirm=False, show_progress=False, Sound=True)
                 tweety_speaks("Recycle Bin in clean now")
 
-            #turnoff commands
+            # turnoff commands
             if "restart" in command:
                 tweety_speaks("restarting the system")
                 execute_subprocess("/r")
-            
+
             if "hibernate" in command or "go to sleep" in command:
                 tweety_speaks("Hibernating...")
                 execute_subprocess('h')
@@ -276,11 +285,13 @@ if __name__=='__main__':
                 print("Stopped listening to your commands for" + sleep_time + "seconds")
 
             if "log off" in command or "sign out" in command or "shut down" in command:
-                tweety_speaks("Hold on , your pc will log off in 10 sec make sure you exit from all currently working or running applications")
+                tweety_speaks(
+                    "Hold on , your pc will log off in 10 sec make sure you exit from all currently working or "
+                    "running applications")
                 execute_subprocess("/l")
 
-        #increment tweety usage count by 1 after every usage
+        # increment tweety usage count by 1 after every usage
         usage_count += 1
 
-#standard 5 seconds sleep time before next run
+# standard 5 seconds sleep time before next run
 time.sleep(5)
