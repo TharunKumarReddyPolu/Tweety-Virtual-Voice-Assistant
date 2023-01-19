@@ -79,49 +79,9 @@ Once you are done with the above steps, you are ready to contribute to the `Twee
 
 ### 6. Installing packages required 📦📥
 
-1) `Speech Recognition` — Speech recognition is an important feature of voice assistants. The main function of this library is it tries to understand whatever humans speak and converts the speech to text. Install using the below command in the terminal
+To install the required packages run the below command
 ```bash
-   pip install SpeechRecognition
-```
-
-2) `Pyttsx3` - This module is used for the conversion of text to speech in a program and works offline. Install this module using the below command in the terminal.
-```bash
-   pip install pyttsx3
-```
-
-3) `Wikipedia` - Wikipedia is a multilingual online encyclopedia used by many people from the academic community ranging from freshmen to students to professors who wants to gain information on a particular topic. This python package extracts data required from Wikipedia. Install using the below command
-```bash
-   pip install wikipedia
-```
-
-4) `WolframAlpha` - It is used to compute expert-level answers using Wolfram’s algorithms, knowledge base, and AI technology. Install this module using the below command in the terminal
-```bash
-   pip install wolframalpha
-```
-
-5) `Ecapture` - This module is used to capture images from your Camera. Install this module using the below command in the terminal.
-```bash
-   pip install ecapture
-```
-
-6) `Twilio` - This package is used for making calls and messages. Install this module using the below command in the terminal.
-```bash
-   pip install twilio
-```
-
-7) `Winshell` - It is a light wrapper around the Windows shell functionality. It includes convenience functions for accessing special folders, using the shell’s file copy, rename & delete functionality, and a certain amount of support for structured storage. Install this module using the below command in the terminal.
-```bash
-   pip install winshell
-```
-
-8) `PyJokes` - This package provides one-line jokes for programmers (i.e, jokes as a service). Install this module using the below command in the terminal.
-```bash
-   pip install pyjokes
-```
-
-9) `PyAudio` - This is a package with which you can easily use python to play and record audio on a variety of platforms, such as GNU/Linux, Microsoft Windows, and Apple macOS. Install this module using the below command in the terminal.
-```bash
-   pip install PyAudio
+   pip install -r requirements.txt
 ```
 
 > If any package installation is not specified above, then those packages are built-in with python.
