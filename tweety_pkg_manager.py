@@ -75,8 +75,7 @@ def installed_modules_list(type):
 def exit_session():
     # Exits the current command line session
     print("Thanks for using the package manager!")
-    quit()
-    
+    quit()    
 
 
 # Driver program
@@ -91,6 +90,8 @@ if __name__=='__main__':
         "5. Freeze\n"+
         "6. Exit\n"+
         "Choose the operation? " )
+    # Pro Tip: Switch case can be used but it's available from Python 3.10+ version
+    # But we are currently running on Python 3.7 Stable edition.
     if user_action_menu.isnumeric():
         if user_action_menu == "1":
             # Takes module name and installs the latest version of the module

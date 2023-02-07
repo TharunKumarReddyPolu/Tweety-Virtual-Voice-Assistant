@@ -8,20 +8,17 @@ voices = engine.getProperty('voices')
 # Set voice ID to '0' for Male voice, '1' for Female Voice
 engine.setProperty('voice', voices[1].id)
 
-
 # utility functions
 # This function helps Tweety to speak
 def tweety_speaks(command):
     engine.say(command)
     engine.runAndWait()
 
-
 # Loading the virtual assistant
 def load_tweety():
     response_load = "Loading your Virtual Voice Assistant..."
     print(response_load)
     tweety_speaks(response_load)
-
 
 # This function helps Tweety to wish the user whenever the session starts.
 def wish_me():
@@ -35,7 +32,6 @@ def wish_me():
     else:
         tweety_speaks("Hello,Good Evening, I am your virtual voice assistant tweety")
         print("Hello,Good Evening, I am your virtual voice assistant tweety")
-
 
 # This function helps Tweety to take custom commands from user
 def takeCommand():
@@ -55,7 +51,6 @@ def takeCommand():
             takeCommand()
     return user_response
 
-
 # This function helps Tweety to get the user information
 def user_info():
     tweety_speaks("May i know your name?")
@@ -71,7 +66,6 @@ def user_info():
         user_info()
     return user_name
 
-
 # This function helps Tweety to send an email
 def send_email(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -82,7 +76,6 @@ def send_email(to, content):
     server.sendmail(email_id, to, content)
     server.close()
     return True
-
 
 # This function helps to execute the user commands using webbrowser instance.
 def execute_webbrowser(user_search, type):
@@ -99,7 +92,6 @@ def execute_webbrowser(user_search, type):
         webbrowser.open(user_search)
         time.sleep(5)
 
-
 # This function helps to execute the user commands using webbrowser instance.
 def execute_wolframalpha():
     query = takeCommand()
@@ -114,7 +106,6 @@ def execute_wolframalpha():
         tweety_speaks("Sorry no results found")
         print("Sorry no results found")
 
-
-# This function helps to execute the user commands using subprocess instance
+# This function helps to execute the user commands using OS subprocess instance
 def execute_subprocess(type):
     subprocess.call("shutdown / h") if type == 'h' else subprocess.call(["shutdown", type])  # if else one-liner
