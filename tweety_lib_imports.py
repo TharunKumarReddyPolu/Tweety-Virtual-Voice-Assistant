@@ -1,4 +1,4 @@
-#necessary lib. imports required for Tweety - The virtual voice assistant to work.
+#necessary lib. imports required for Tweety - The virtual voice assistant to function.
 import ctypes
 import datetime
 import json

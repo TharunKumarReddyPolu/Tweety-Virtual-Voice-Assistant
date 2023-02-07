@@ -9,7 +9,7 @@ from tweety_functions import *
 
 if __name__ == '__main__':
     # the below line of code clears the console
-    # before tweety turns up
+    # before tweety turns up everytime
     clear = lambda: os.system('cls')
     clear()
 
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # Below variable keeps track of tweety voice assistant usage
     usage_count = 1
     while True:
-        # check if tweety is ready to ans the second question
+        # check if tweety is ready to answer the second question asked by the user
         if usage_count >= 2:
             ask_next_query = random.choice(repeat_intro)
             tweety_speaks(ask_next_query)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
                 usage_count = 1
                 continue
             else:
-                # print("in else") for debugging purpose
+                # print("in else") used for debugging purpose
                 break
 
         command = str(takeCommand().lower())
@@ -213,7 +213,7 @@ if __name__ == '__main__':
                 print("The result is " + answer)
                 tweety_speaks("The result is " + answer)
 
-            # most shooted commands/questions
+            # most shooted commands/questions as per Google Assistant, Amazon Alexa, Windows Cortana
             if 'time' in command:
                 str_time = datetime.datetime.now().strftime("%H:%M:%S")
                 tweety_speaks(f"the current time is {str_time}")
@@ -266,7 +266,7 @@ if __name__ == '__main__':
                 winshell.recycle_bin().empty(confirm=False, show_progress=False, Sound=True)
                 tweety_speaks("Recycle Bin in clean now")
 
-            # turnoff commands
+            # system turnoff commands
             if "restart" in command:
                 tweety_speaks("restarting the system")
                 execute_subprocess("/r")
