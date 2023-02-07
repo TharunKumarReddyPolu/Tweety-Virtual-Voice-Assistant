@@ -1,3 +1,9 @@
+'''Copyright (c) 2023, Tharun Kumar Reddy Polu
+All rights reserved.
+
+This source code is licensed under the GNU General Public License v3.0 
+License found in the LICENSE.md file in the root directory of this source tree.''' 
+
 # import required libraries and utility functions from tweety_functions.py file
 from tweety_functions import *
 
