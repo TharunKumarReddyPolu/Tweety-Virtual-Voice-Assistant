@@ -98,8 +98,6 @@ For instance, If `Speech Recognition` package latest version isn't working in yo
 ```
 where `SpeechRecognition` refers to `package_name` and `3.8.1` refers to `previous version`/`specific version`
 
-> `Tweety Package Manager`📦🛡 (A Util which simplifies the package installations 🤯) development is completed 🧑‍💻. It is available with file name `tweety_pkg_manager.py`🙂💯. Do give a try by running the file using Powershell/ Command Prompt😉
-
 ### 7. Create a new branch 🌱
 Whenever you are going to submit a contribution. Please create a separate branch using the below command and keep your `master` branch clean (i.e. synced with the remote branch)
 #### Method 1:
@@ -143,6 +141,9 @@ Finally, Push your awesome hard work to your remote repository with the below co
 Here, `changetype_name` refers to the branch in your remote repository
 
 Finally, Navigate to your forked `Tweety-Virtual-Voice-Assistant` repository in the browser, where you will see `compare and pull requests`. Kindly click and then add a relevant `title` and `description` to your pull request that defines your valuable effort. 🥳✅️
+
+### Latest Updates
+> `Tweety Package Manager`📦🛡 (A Util which simplifies the package installations 🤯) development is completed 🧑‍💻. It is available with file name `tweety_pkg_manager.py`🙂💯. Do give a try by running the file using Powershell/ Command Prompt😉
 
 ## Help us improve the project better 📈🤗
 
